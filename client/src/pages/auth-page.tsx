@@ -85,322 +85,275 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+    <div className="min-h-screen flex flex-col md:flex-row bg-teal-950">
       {/* Hero Section - Moved to first for better mobile experience */}
       <div className="w-full md:w-1/2 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 flex items-center justify-center p-6 md:p-12">
         <div className="max-w-md text-white">
-          <div className="text-center md:text-left mb-8">
-            <h1 className="text-5xl font-extrabold mb-2">StudySync</h1>
+          <div className="text-center md:text-left mb-8 animate-pulse">
+            <h1 className="text-5xl font-extrabold mb-2 text-white">StudySync</h1>
             <div className="h-1 w-20 bg-white/60 mx-auto md:mx-0 mb-6"></div>
             <h2 className="text-2xl font-semibold text-white/90">AI-Powered Learning Platform</h2>
           </div>
           
-          <p className="text-lg mb-8 text-white/85">
+          <p className="text-lg mb-8 text-white/85 animate-fade-in">
             Enhance your learning experience with our intelligent study assistant. 
             Upload your notes, generate flashcards, and join a community of learners.
           </p>
           
           <div className="grid grid-cols-2 gap-4">
-            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105">
+            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-teal-800 hover:bg-teal-700 transition-all transform hover:scale-105">
               <div className="flex justify-center md:justify-start">
                 <i className="fas fa-brain text-3xl mb-3 text-yellow-300"></i>
               </div>
-              <h3 className="font-bold text-center md:text-left">Smart Notes</h3>
-              <p className="text-sm text-white/80 text-center md:text-left">AI-powered note generation and organization</p>
+              <h3 className="font-bold text-center md:text-left text-white">Smart Notes</h3>
+              <p className="text-sm text-white text-center md:text-left">AI-powered note generation and organization</p>
             </div>
-            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105">
+            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-teal-800 hover:bg-teal-700 transition-all transform hover:scale-105">
               <div className="flex justify-center md:justify-start">
                 <i className="fas fa-graduation-cap text-3xl mb-3 text-green-300"></i>
               </div>
-              <h3 className="font-bold text-center md:text-left">Flashcards</h3>
-              <p className="text-sm text-white/80 text-center md:text-left">Interactive study cards with spaced repetition</p>
+              <h3 className="font-bold text-center md:text-left text-white">Flashcards</h3>
+              <p className="text-sm text-white text-center md:text-left">Interactive study cards with spaced repetition</p>
             </div>
-            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105">
+            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-teal-800 hover:bg-teal-700 transition-all transform hover:scale-105">
               <div className="flex justify-center md:justify-start">
                 <i className="fas fa-users text-3xl mb-3 text-blue-300"></i>
               </div>
-              <h3 className="font-bold text-center md:text-left">Community</h3>
-              <p className="text-sm text-white/80 text-center md:text-left">Collaborate with peers and share resources</p>
+              <h3 className="font-bold text-center md:text-left text-white">Community</h3>
+              <p className="text-sm text-white text-center md:text-left">Collaborate with peers and share resources</p>
             </div>
-            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all transform hover:scale-105">
+            <div className="border border-white/20 rounded-lg p-4 backdrop-blur-sm bg-teal-800 hover:bg-teal-700 transition-all transform hover:scale-105">
               <div className="flex justify-center md:justify-start">
                 <i className="fas fa-chart-line text-3xl mb-3 text-purple-300"></i>
               </div>
-              <h3 className="font-bold text-center md:text-left">Progress Tracking</h3>
-              <p className="text-sm text-white/80 text-center md:text-left">Monitor your learning achievements</p>
+              <h3 className="font-bold text-center md:text-left text-white">Progress Tracking</h3>
+              <p className="text-sm text-white text-center md:text-left">Monitor your learning achievements</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Form Section */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8">
-        <div className="max-w-md w-full space-y-8">
-          <div className="text-center">
-            <h2 className="mt-6 text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-900">
-              {isLogin ? "Welcome Back!" : "Join StudySync Today"}
-            </h2>
-            <p className="mt-2 text-center text-base text-gray-600">
-              {isLogin ? "New to StudySync? " : "Already have an account? "}
-            </p>
-            <div className="mt-3 mb-6">
-              <div className="inline-flex rounded-md shadow-sm">
-                <button
-                  type="button"
-                  onClick={() => setIsLogin(true)}
-                  className={`px-4 py-2 text-sm font-medium rounded-l-md ${
-                    isLogin 
-                      ? "bg-primary-600 text-white" 
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  Login
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setIsLogin(false)}
-                  className={`px-4 py-2 text-sm font-medium rounded-r-md ${
-                    !isLogin 
-                      ? "bg-primary-600 text-white" 
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  Register
-                </button>
-              </div>
-            </div>
+      <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-white">
+  <div className="max-w-md w-full space-y-8">
+    <div className="text-center">
+      <h2 className="text-3xl font-extrabold bg-gradient-to-r from-teal-600 to-teal-900 text-transparent bg-clip-text">
+        {isLogin ? "Welcome Back!" : "Join StudySync Today"}
+      </h2>
+      <p className="mt-2 text-base text-gray-600">
+        {isLogin ? "New to StudySync? " : "Already have an account? "}
+      </p>
+
+      <div className="mt-4 flex justify-center gap-1">
+        <button
+          type="button"
+          onClick={() => setIsLogin(true)}
+          className={`px-4 py-2 rounded-l-full text-sm font-semibold transition-colors duration-200 ${
+            isLogin
+              ? "bg-teal-800 text-white"
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+          }`}
+        >
+          Login
+        </button>
+        <button
+          type="button"
+          onClick={() => setIsLogin(false)}
+          className={`px-4 py-2 rounded-r-full text-sm font-semibold transition-colors duration-200 ${
+            !isLogin
+              ? "bg-teal-800 text-white"
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+          }`}
+        >
+          Register
+        </button>
+      </div>
+    </div>
+
+    <div
+      className={`rounded-lg shadow-xl p-6 border ${
+        isLogin ? "bg-teal-800 text-white" : "bg-white text-gray-700"
+      }`}
+    >
+      <form
+        className="space-y-5"
+        onSubmit={
+          isLogin
+            ? loginForm.handleSubmit(onLoginSubmit)
+            : registerForm.handleSubmit(onRegisterSubmit)
+        }
+      >
+        {/* Username */}
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Username
+          </label>
+          <div className="relative">
+            <span className="absolute left-4 top-3 text-gray-400">
+              <i className="fas fa-user" />
+            </span>
+            <input
+              type="text"
+              {...(isLogin
+                ? loginForm.register("username")
+                : registerForm.register("username"))}
+              className="w-full py-2 pl-10 pr-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-teal-500"
+              placeholder="Enter username"
+            />
           </div>
-
-          {isLogin ? (
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <form className="space-y-5" onSubmit={loginForm.handleSubmit(onLoginSubmit)}>
-                <div>
-                  <label htmlFor="login-username" className="block text-sm font-medium text-gray-700 mb-1">
-                    Username
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <i className="fas fa-user text-gray-400"></i>
-                    </div>
-                    <input
-                      id="login-username"
-                      type="text"
-                      {...loginForm.register("username")}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      placeholder="Enter your username"
-                    />
-                  </div>
-                  {loginForm.formState.errors.username && (
-                    <p className="text-red-500 text-xs mt-1">{loginForm.formState.errors.username.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label htmlFor="login-password" className="block text-sm font-medium text-gray-700 mb-1">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <i className="fas fa-lock text-gray-400"></i>
-                    </div>
-                    <input
-                      id="login-password"
-                      type="password"
-                      {...loginForm.register("password")}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      placeholder="Enter your password"
-                    />
-                  </div>
-                  {loginForm.formState.errors.password && (
-                    <p className="text-red-500 text-xs mt-1">{loginForm.formState.errors.password.message}</p>
-                  )}
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                    />
-                    <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
-                      Remember me
-                    </label>
-                  </div>
-
-                  <div className="text-sm">
-                    <a href="#" className="font-medium text-primary-600 hover:text-primary-500">
-                      Forgot password?
-                    </a>
-                  </div>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    disabled={loginForm.formState.isSubmitting}
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
-                  >
-                    {loginForm.formState.isSubmitting ? (
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    ) : (
-                      <>
-                        <i className="fas fa-sign-in-alt mr-2"></i> Sign in
-                      </>
-                    )}
-                  </button>
-                </div>
-              </form>
-              <div className="mt-6">
-                <div className="relative">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-300"></div>
-                  </div>
-                  <div className="relative flex justify-center text-sm">
-                    <span className="px-2 bg-white text-gray-500">Or continue with</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 gap-3">
-                  <div>
-                    <a href="#" className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                      <i className="fab fa-google text-red-600 mr-2"></i> Google
-                    </a>
-                  </div>
-                  <div>
-                    <a href="#" className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                      <i className="fab fa-github text-gray-800 mr-2"></i> GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <form className="space-y-4" onSubmit={registerForm.handleSubmit(onRegisterSubmit)}>
-                <div>
-                  <label htmlFor="register-username" className="block text-sm font-medium text-gray-700 mb-1">
-                    Username
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <i className="fas fa-user text-gray-400"></i>
-                    </div>
-                    <input
-                      id="register-username"
-                      type="text"
-                      {...registerForm.register("username")}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      placeholder="Choose a username"
-                    />
-                  </div>
-                  {registerForm.formState.errors.username && (
-                    <p className="text-red-500 text-xs mt-1">{registerForm.formState.errors.username.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label htmlFor="register-email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <i className="fas fa-envelope text-gray-400"></i>
-                    </div>
-                    <input
-                      id="register-email"
-                      type="email"
-                      {...registerForm.register("email")}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                  {registerForm.formState.errors.email && (
-                    <p className="text-red-500 text-xs mt-1">{registerForm.formState.errors.email.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label htmlFor="register-password" className="block text-sm font-medium text-gray-700 mb-1">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <i className="fas fa-lock text-gray-400"></i>
-                    </div>
-                    <input
-                      id="register-password"
-                      type="password"
-                      {...registerForm.register("password")}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      placeholder="Create a password"
-                    />
-                  </div>
-                  {registerForm.formState.errors.password && (
-                    <p className="text-red-500 text-xs mt-1">{registerForm.formState.errors.password.message}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label htmlFor="register-confirm-password" className="block text-sm font-medium text-gray-700 mb-1">
-                    Confirm Password
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <i className="fas fa-check-circle text-gray-400"></i>
-                    </div>
-                    <input
-                      id="register-confirm-password"
-                      type="password"
-                      {...registerForm.register("confirmPassword")}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                      placeholder="Confirm your password"
-                    />
-                  </div>
-                  {registerForm.formState.errors.confirmPassword && (
-                    <p className="text-red-500 text-xs mt-1">{registerForm.formState.errors.confirmPassword.message}</p>
-                  )}
-                </div>
-
-                <div className="flex items-center">
-                  <input
-                    id="terms"
-                    name="terms"
-                    type="checkbox"
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
-                    I agree to the <a href="#" className="text-primary-600 hover:text-primary-500">Terms</a> and <a href="#" className="text-primary-600 hover:text-primary-500">Privacy Policy</a>
-                  </label>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    disabled={registerForm.formState.isSubmitting}
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
-                  >
-                    {registerForm.formState.isSubmitting ? (
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                    ) : (
-                      <>
-                        <i className="fas fa-user-plus mr-2"></i> Create Account
-                      </>
-                    )}
-                  </button>
-                </div>
-              </form>
-            </div>
+          {(
+            isLogin
+              ? loginForm.formState.errors.username
+              : registerForm.formState.errors.username
+          ) && (
+            <p className="text-red-400 text-xs mt-1">
+              {(
+                isLogin
+                  ? loginForm.formState.errors.username
+                  : registerForm.formState.errors.username
+              ).message}
+            </p>
           )}
         </div>
+
+        {/* Email (only in register) */}
+        {!isLogin && (
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              Email
+            </label>
+            <div className="relative">
+              <span className="absolute left-4 top-3 text-gray-400">
+                <i className="fas fa-envelope" />
+              </span>
+              <input
+                type="email"
+                {...registerForm.register("email")}
+                className="w-full py-2 pl-10 pr-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="Enter email"
+              />
+            </div>
+            {registerForm.formState.errors.email && (
+              <p className="text-red-400 text-xs mt-1">
+                {registerForm.formState.errors.email.message}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Password */}
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Password
+          </label>
+          <div className="relative">
+            <span className="absolute left-4 top-3 text-gray-400">
+              <i className="fas fa-lock" />
+            </span>
+            <input
+              type="password"
+              {...(isLogin
+                ? loginForm.register("password")
+                : registerForm.register("password"))}
+              className="w-full py-2 pl-10 pr-3 rounded-full text-black border focus:outline-none focus:ring-2 focus:ring-teal-500"
+              placeholder="Enter password"
+            />
+          </div>
+          {(
+            isLogin
+              ? loginForm.formState.errors.password
+              : registerForm.formState.errors.password
+          ) && (
+            <p className="text-red-400 text-xs mt-1">
+              {(
+                isLogin
+                  ? loginForm.formState.errors.password
+                  : registerForm.formState.errors.password
+              ).message}
+            </p>
+          )}
+        </div>
+
+        {/* Confirm Password (only in register) */}
+        {!isLogin && (
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              Confirm Password
+            </label>
+            <div className="relative">
+              <span className="absolute left-4 top-3 text-gray-400">
+                <i className="fas fa-check-circle" />
+              </span>
+              <input
+                type="password"
+                {...registerForm.register("confirmPassword")}
+                className="w-full py-2 pl-10 pr-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="Confirm password"
+              />
+            </div>
+            {registerForm.formState.errors.confirmPassword && (
+              <p className="text-red-400 text-xs mt-1">
+                {registerForm.formState.errors.confirmPassword.message}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Remember me and forgot password (only in login) */}
+        {isLogin && (
+          <div className="flex justify-between items-center text-sm">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2 rounded text-teal-600"
+              />
+              Remember me
+            </label>
+            <a href="#" className="hover:underline">
+              Forgot password?
+            </a>
+          </div>
+        )}
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={
+            isLogin
+              ? loginForm.formState.isSubmitting
+              : registerForm.formState.isSubmitting
+          }
+          className={`w-full py-2 rounded-full font-semibold text-sm transition-colors ${
+            isLogin ? "bg-white text-teal-800" : "bg-teal-800 text-white"
+          } hover:opacity-90 shadow-md`}
+        >
+          {isLogin ? "Sign in" : "Create account"}
+        </button>
+      </form>
+
+      {/* Or continue with */}
+      <div className="mt-6 text-center text-sm">
+        <div className="flex items-center gap-4 justify-center text-gray-300 mb-4">
+          <div className="w-20 h-px bg-gray-300" />
+          <span className="text-sm font-medium">
+            Or continue with
+          </span>
+          <div className="w-20 h-px bg-gray-300" />
+        </div>
+
+        <div className="flex justify-center gap-4">
+          <button className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 text-sm font-medium shadow-sm">
+            <i className="fab fa-google text-red-500"></i> Google
+          </button>
+          <button className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 text-sm font-medium shadow-sm">
+            <i className="fab fa-github text-gray-800"></i> GitHub
+          </button>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }
